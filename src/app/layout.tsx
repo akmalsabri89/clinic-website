@@ -12,8 +12,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "MediCare Clinic — Your Health, Our Priority",
-  description:
-    "Compassionate, evidence-based medical care for you and your family — from routine check-ups to specialist consultations, all in one place.",
+  description: "Compassionate, evidence-based medical care in Kedah, Malaysia.",
 };
 
 export default function RootLayout({
