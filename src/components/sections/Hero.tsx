@@ -67,6 +67,38 @@ export default function Hero() {
               {CLINIC.description}
             </motion.p>
 
+            {/* Mobile: image + stats — between description and CTAs */}
+            <motion.div
+              variants={resolvedFadeUp}
+              className="lg:hidden relative w-full"
+            >
+              {/* Photo */}
+              <div className="relative w-full h-72 rounded-3xl overflow-hidden shadow-xl">
+                <Image
+                  src="/hero-family.png"
+                  alt="Malaysian family at MediCare Clinic"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+              </div>
+
+              {/* Stats row */}
+              <div className="flex gap-3 mt-4">
+                {STATS.map((stat) => (
+                  <div
+                    key={stat.value}
+                    className="flex-1 bg-white rounded-xl px-3 py-3 shadow-md border border-gray-100 text-center"
+                  >
+                    <p className="text-xl font-bold leading-none" style={{ color: "#0891B2" }}>
+                      {stat.value}
+                    </p>
+                    <p className="text-[10px] text-gray-500 font-medium mt-0.5">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
             {/* CTA buttons */}
             <motion.div
               variants={resolvedFadeUp}
@@ -87,7 +119,7 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right: photo with stats overlapping the edges */}
+          {/* Desktop: photo with stats overlapping the edges */}
           <motion.div
             className="hidden lg:flex items-center justify-center"
             variants={resolvedStagger}
@@ -99,7 +131,7 @@ export default function Hero() {
               {/* Decorative blob behind photo */}
               <div className="absolute -inset-8 bg-[#0891B2]/10 rounded-[4rem] blur-3xl -z-10" />
 
-              {/* Doctor image — 1.5× original size */}
+              {/* Photo */}
               <motion.div
                 variants={resolvedFadeUp}
                 className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl"
