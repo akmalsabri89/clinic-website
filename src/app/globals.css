@@ -130,6 +130,10 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  section[id] {
+    scroll-margin-top: 4rem;
   }
   h1, h2 {
     font-family: var(--font-heading);

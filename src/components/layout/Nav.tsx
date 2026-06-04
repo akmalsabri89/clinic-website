@@ -9,15 +9,6 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const shouldReduceMotion = useReducedMotion()
 
-  function handleNavClick(href: string) {
-    setMobileOpen(false)
-    const id = href.replace("#", "")
-    const el = document.getElementById(id)
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
     <motion.header
       className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm relative"
@@ -30,10 +21,6 @@ export default function Nav() {
           {/* Logo */}
           <a
             href="#hero"
-            onClick={(e) => {
-              e.preventDefault()
-              handleNavClick("#hero")
-            }}
             className="flex items-center gap-2 font-bold text-[#111827] text-lg hover:text-[#0891B2] transition-colors"
           >
             <Heart className="w-5 h-5 text-[#0891B2] fill-[#0891B2]" />
@@ -46,10 +33,6 @@ export default function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleNavClick(link.href)
-                }}
                 className="text-sm font-medium text-gray-600 hover:text-[#0891B2] transition-colors"
               >
                 {link.label}
@@ -61,10 +44,6 @@ export default function Nav() {
           <div className="hidden md:block">
             <a
               href="#contact"
-              onClick={(e) => {
-                e.preventDefault()
-                handleNavClick("#contact")
-              }}
               className="inline-flex items-center px-4 py-2 rounded-lg bg-[#0891B2] text-white text-sm font-semibold hover:bg-[#0e7490] transition-colors"
             >
               Book Appointment
@@ -84,7 +63,7 @@ export default function Nav() {
         </div>
       </div>
 
-      {/* Mobile dropdown — absolutely positioned below header */}
+      {/* Mobile dropdown */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -99,10 +78,7 @@ export default function Nav() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    handleNavClick(link.href)
-                  }}
+                  onClick={() => setMobileOpen(false)}
                   className="py-3 px-3 rounded-md text-sm font-medium text-gray-700 hover:text-[#0891B2] hover:bg-[#ecfeff] transition-colors"
                 >
                   {link.label}
@@ -110,10 +86,7 @@ export default function Nav() {
               ))}
               <a
                 href="#contact"
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleNavClick("#contact")
-                }}
+                onClick={() => setMobileOpen(false)}
                 className="mt-2 inline-flex justify-center items-center px-4 py-3 rounded-lg bg-[#0891B2] text-white text-sm font-semibold hover:bg-[#0e7490] transition-colors"
               >
                 Book Appointment
