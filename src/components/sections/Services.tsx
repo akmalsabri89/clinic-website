@@ -37,7 +37,7 @@ export default function Services() {
         >
           <span
             className="inline-block mb-4 px-4 py-1.5 rounded-full text-sm font-medium"
-            style={{ backgroundColor: "#f0f7f5", color: "#16654b" }}
+            style={{ backgroundColor: "#ecfeff", color: "#0891B2" }}
           >
             Our Services
           </span>
@@ -78,9 +78,9 @@ export default function Services() {
                   <CardHeader>
                     <div
                       className="w-12 h-12 rounded-full flex items-center justify-center mb-3"
-                      style={{ backgroundColor: "#f0f7f5" }}
+                      style={{ backgroundColor: "#ecfeff" }}
                     >
-                      {Icon && <Icon size={22} style={{ color: "#16654b" }} strokeWidth={1.75} />}
+                      {Icon && <Icon size={22} style={{ color: "#0891B2" }} strokeWidth={1.75} />}
                     </div>
                     <CardTitle className="text-base font-semibold" style={{ color: "#111827" }}>
                       {service.title}
@@ -93,7 +93,7 @@ export default function Services() {
                     <a
                       href="#contact"
                       className="text-sm font-medium inline-flex items-center gap-1 transition-opacity hover:opacity-75"
-                      style={{ color: "#16654b" }}
+                      style={{ color: "#0891B2" }}
                     >
                       {service.cta} →
                     </a>

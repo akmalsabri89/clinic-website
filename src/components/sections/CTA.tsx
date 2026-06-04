@@ -29,7 +29,7 @@ export default function CTA() {
     <section
       id="contact"
       className="relative overflow-hidden py-32 px-6"
-      style={{ backgroundColor: "#16654b" }}
+      style={{ backgroundColor: "#0891B2" }}
     >
       {/* Decorative background circles */}
       <motion.div
@@ -77,7 +77,7 @@ export default function CTA() {
             className="inline-flex items-center justify-center font-semibold px-8 py-3.5 rounded-lg transition-colors duration-200 text-sm whitespace-nowrap"
             style={{
               backgroundColor: "#ffffff",
-              color: "#16654b",
+              color: "#0891B2",
             }}
             whileHover={shouldReduceMotion ? {} : { scale: 1.03 }}
             whileTap={shouldReduceMotion ? {} : { scale: 0.98 }}

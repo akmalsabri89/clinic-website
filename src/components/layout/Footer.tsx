@@ -87,7 +87,7 @@ export default function Footer() {
             >
               <Heart
                 className="w-5 h-5 shrink-0"
-                style={{ color: "#16654b", fill: "#16654b" }}
+                style={{ color: "#0891B2", fill: "#0891B2" }}
               />
               <span>{CLINIC.name}</span>
             </a>

@@ -20,10 +20,10 @@ interface StatItem {
 }
 
 const STATS: StatItem[] = [
-  { value: "500+", label: "Patients Served", numericValue: 500, suffix: "+" },
-  { value: "15+", label: "Years in Practice", numericValue: 15, suffix: "+" },
-  { value: "98%", label: "Patient Satisfaction", numericValue: 98, suffix: "%" },
-  { value: "24h", label: "Online Booking", numericValue: 24, suffix: "h" },
+  { value: "98%", label: "Patient satisfaction", numericValue: 98, suffix: "%" },
+  { value: "24h", label: "Online booking", numericValue: 24, suffix: "h" },
+  { value: "6+", label: "Insurance panels", numericValue: 6, suffix: "+" },
+  { value: "3", label: "MOH-registered doctors", numericValue: 3, suffix: "" },
 ]
 
 interface AnimatedCounterProps {
@@ -83,7 +83,7 @@ export default function WhyUs() {
     : slideFromLeft
 
   return (
-    <section id="about" className="py-24 px-6" style={{ backgroundColor: "#f0f7f5" }}>
+    <section id="about" className="py-24 px-6" style={{ backgroundColor: "#ecfeff" }}>
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
@@ -95,7 +95,7 @@ export default function WhyUs() {
           >
             <span
               className="inline-block mb-4 px-4 py-1.5 rounded-full text-sm font-medium"
-              style={{ backgroundColor: "#dceee8", color: "#16654b" }}
+              style={{ backgroundColor: "#cffafe", color: "#0891B2" }}
             >
               Why Choose Us
             </span>
@@ -111,7 +111,7 @@ export default function WhyUs() {
                   <CheckCircle2
                     size={20}
                     className="shrink-0 mt-0.5"
-                    style={{ color: "#16654b" }}
+                    style={{ color: "#0891B2" }}
                     strokeWidth={2}
                   />
                   <span className="text-base" style={{ color: "#374151" }}>
@@ -124,8 +124,8 @@ export default function WhyUs() {
               href="#contact"
               className="inline-flex items-center gap-1 text-sm font-semibold border rounded-lg px-5 py-2.5 transition-colors hover:bg-white"
               style={{
-                color: "#16654b",
-                borderColor: "#16654b",
+                color: "#0891B2",
+                borderColor: "#0891B2",
               }}
             >
               Meet Our Doctors →
@@ -143,14 +143,13 @@ export default function WhyUs() {
           >
             {STATS.map((stat) => (
               <motion.div
-                key={stat.value}
+                key={stat.label}
                 variants={resolvedFadeUp}
-                className="rounded-xl p-6 bg-white border-l-4"
-                style={{ borderLeftColor: "#16654b" }}
+                className="rounded-xl p-6 bg-white border border-gray-100 hover:border-[#a5f3fc] transition-colors duration-200"
               >
                 <p
                   className="text-4xl font-bold tracking-tight mb-1"
-                  style={{ color: "#16654b" }}
+                  style={{ color: "#0891B2" }}
                 >
                   <AnimatedCounter
                     numericValue={stat.numericValue}
@@ -163,6 +162,15 @@ export default function WhyUs() {
                 </p>
               </motion.div>
             ))}
+
+            {/* Attribution */}
+            <motion.p
+              variants={resolvedFadeUp}
+              className="col-span-2 text-xs text-center"
+              style={{ color: "#9ca3af" }}
+            >
+              Satisfaction rate based on 2024 patient feedback · Insurance panels subject to confirmation
+            </motion.p>
           </motion.div>
         </div>
       </div>

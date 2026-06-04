@@ -17,7 +17,7 @@ export default function Testimonials() {
     : staggerContainer
 
   return (
-    <section id="testimonials" className="py-24 px-6" style={{ backgroundColor: "#f0f7f5" }}>
+    <section id="testimonials" className="py-24 px-6" style={{ backgroundColor: "#ecfeff" }}>
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -29,7 +29,7 @@ export default function Testimonials() {
         >
           <span
             className="inline-block text-sm font-semibold uppercase tracking-widest mb-4 px-4 py-1.5 rounded-full"
-            style={{ color: "#16654b", backgroundColor: "rgba(22,101,75,0.1)" }}
+            style={{ color: "#0891B2", backgroundColor: "rgba(8,145,178,0.1)" }}
           >
             Patient Reviews
           </span>
@@ -54,27 +54,31 @@ export default function Testimonials() {
               key={testimonial.name}
               variants={resolvedFadeUp}
             >
-              <Card
-                className="bg-white border-l-4 shadow-sm hover:shadow-md transition-shadow duration-200 h-full"
-                style={{ borderLeftColor: "#16654b" }}
-              >
-                <CardContent className="pt-6 pb-6 flex flex-col gap-4">
-                  {/* Stars */}
-                  <p className="text-yellow-400 text-lg tracking-wide leading-none">
-                    ★★★★★
-                  </p>
+              <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 h-full">
+                <CardContent className="pt-6 pb-6 flex flex-col gap-3">
+                  {/* Pull-quote mark */}
+                  <span
+                    className="text-5xl font-serif leading-none select-none"
+                    style={{ color: "#a5f3fc" }}
+                    aria-hidden="true"
+                  >
+                    &ldquo;
+                  </span>
 
                   {/* Quote */}
-                  <p className="text-gray-700 italic leading-relaxed text-sm flex-1">
-                    &ldquo;{testimonial.quote}&rdquo;
+                  <p className="text-gray-700 leading-relaxed text-sm flex-1 -mt-2">
+                    {testimonial.quote}
                   </p>
 
-                  {/* Author */}
-                  <div className="pt-2 border-t border-gray-100">
-                    <p className="font-semibold text-sm" style={{ color: "#111827" }}>
-                      {testimonial.name}
-                    </p>
-                    <p className="text-xs text-gray-500 mt-0.5">{testimonial.role}</p>
+                  {/* Stars + Author */}
+                  <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
+                    <div>
+                      <p className="font-semibold text-sm" style={{ color: "#111827" }}>
+                        {testimonial.name}
+                      </p>
+                      <p className="text-xs text-gray-500 mt-0.5">{testimonial.role}</p>
+                    </div>
+                    <p className="text-yellow-400 text-sm tracking-wide leading-none">★★★★★</p>
                   </div>
                 </CardContent>
               </Card>

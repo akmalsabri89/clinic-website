@@ -2,7 +2,7 @@ export const CLINIC = {
   name: "MediCare Clinic",
   tagline: "Your Health, Our Priority",
   description:
-    "Compassionate, evidence-based medical care for you and your family — from routine check-ups to specialist consultations, all in one place.",
+    "Same-day GP appointments in Alor Setar. Routine check-ups to specialist referrals — no waiting lists, no runaround.",
   phone: "+60 4-XXX XXXX",
   email: "hello@medicareclinic.my",
   address: "No. 1, Jalan Kesihatan, Alor Setar, Kedah",

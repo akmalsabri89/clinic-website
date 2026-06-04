@@ -45,9 +45,9 @@ export default function Nav() {
               e.preventDefault()
               handleNavClick("#hero")
             }}
-            className="flex items-center gap-2 font-bold text-[#111827] text-lg hover:text-[#16654b] transition-colors"
+            className="flex items-center gap-2 font-bold text-[#111827] text-lg hover:text-[#0891B2] transition-colors"
           >
-            <Heart className="w-5 h-5 text-[#16654b] fill-[#16654b]" />
+            <Heart className="w-5 h-5 text-[#0891B2] fill-[#0891B2]" />
             <span>{CLINIC.name}</span>
           </a>
 
@@ -61,7 +61,7 @@ export default function Nav() {
                   e.preventDefault()
                   handleNavClick(link.href)
                 }}
-                className="text-sm font-medium text-gray-600 hover:text-[#16654b] transition-colors"
+                className="text-sm font-medium text-gray-600 hover:text-[#0891B2] transition-colors"
               >
                 {link.label}
               </a>
@@ -76,7 +76,7 @@ export default function Nav() {
                 e.preventDefault()
                 handleNavClick("#contact")
               }}
-              className="inline-flex items-center px-4 py-2 rounded-lg bg-[#16654b] text-white text-sm font-semibold hover:bg-[#124f3a] transition-colors"
+              className="inline-flex items-center px-4 py-2 rounded-lg bg-[#0891B2] text-white text-sm font-semibold hover:bg-[#0e7490] transition-colors"
             >
               Book Appointment
             </a>
@@ -85,7 +85,7 @@ export default function Nav() {
           {/* Mobile hamburger */}
           <button
             type="button"
-            className="md:hidden p-2 rounded-md text-gray-600 hover:text-[#16654b] hover:bg-[#f0f7f5] transition-colors"
+            className="md:hidden p-2 rounded-md text-gray-600 hover:text-[#0891B2] hover:bg-[#ecfeff] transition-colors"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -114,7 +114,7 @@ export default function Nav() {
                     e.preventDefault()
                     handleNavClick(link.href)
                   }}
-                  className="py-2 px-3 rounded-md text-sm font-medium text-gray-700 hover:text-[#16654b] hover:bg-[#f0f7f5] transition-colors"
+                  className="py-2 px-3 rounded-md text-sm font-medium text-gray-700 hover:text-[#0891B2] hover:bg-[#ecfeff] transition-colors"
                 >
                   {link.label}
                 </a>
@@ -125,7 +125,7 @@ export default function Nav() {
                   e.preventDefault()
                   handleNavClick("#contact")
                 }}
-                className="mt-2 inline-flex justify-center items-center px-4 py-2 rounded-lg bg-[#16654b] text-white text-sm font-semibold hover:bg-[#124f3a] transition-colors"
+                className="mt-2 inline-flex justify-center items-center px-4 py-2 rounded-lg bg-[#0891B2] text-white text-sm font-semibold hover:bg-[#0e7490] transition-colors"
               >
                 Book Appointment
               </a>
