@@ -18,22 +18,11 @@ export default function Nav() {
     }
   }
 
-  const navVariants = {
-    initial: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 },
-    animate: { opacity: 1, y: 0 },
-  }
-
-  const mobileMenuVariants = {
-    initial: { height: 0, opacity: 0 },
-    animate: { height: "auto", opacity: 1 },
-    exit: { height: 0, opacity: 0 },
-  }
-
   return (
     <motion.header
-      className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm"
-      initial={navVariants.initial}
-      animate={navVariants.animate}
+      className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm relative"
+      initial={shouldReduceMotion ? false : { opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -95,17 +84,17 @@ export default function Nav() {
         </div>
       </div>
 
-      {/* Mobile dropdown */}
-      <AnimatePresence initial={false}>
+      {/* Mobile dropdown — absolutely positioned below header */}
+      <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="md:hidden border-t border-gray-100 bg-white overflow-hidden"
-            initial={shouldReduceMotion ? { opacity: 0 } : mobileMenuVariants.initial}
-            animate={shouldReduceMotion ? { opacity: 1 } : mobileMenuVariants.animate}
-            exit={shouldReduceMotion ? { opacity: 0 } : mobileMenuVariants.exit}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg z-50"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
           >
-            <nav className="flex flex-col px-4 py-4 gap-1">
+            <nav className="flex flex-col px-4 py-4 gap-1 max-w-7xl mx-auto">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
@@ -114,7 +103,7 @@ export default function Nav() {
                     e.preventDefault()
                     handleNavClick(link.href)
                   }}
-                  className="py-2 px-3 rounded-md text-sm font-medium text-gray-700 hover:text-[#0891B2] hover:bg-[#ecfeff] transition-colors"
+                  className="py-3 px-3 rounded-md text-sm font-medium text-gray-700 hover:text-[#0891B2] hover:bg-[#ecfeff] transition-colors"
                 >
                   {link.label}
                 </a>
@@ -125,7 +114,7 @@ export default function Nav() {
                   e.preventDefault()
                   handleNavClick("#contact")
                 }}
-                className="mt-2 inline-flex justify-center items-center px-4 py-2 rounded-lg bg-[#0891B2] text-white text-sm font-semibold hover:bg-[#0e7490] transition-colors"
+                className="mt-2 inline-flex justify-center items-center px-4 py-3 rounded-lg bg-[#0891B2] text-white text-sm font-semibold hover:bg-[#0e7490] transition-colors"
               >
                 Book Appointment
               </a>
